@@ -1,0 +1,38 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registeration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/r.css' %}">
+    <script src='main.js'></script>
+</head>
+<body>
+
+    <div class= "main">
+        <div class="register">
+            <h2>login here</h2>
+    <form action="login" method="post">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <input type="Submit">
+
+    </form>
+       
+    <div>
+        {%for message in messages%}
+        <h3> {{message}}</h3>
+        {%endfor%}
+    </div>
+  
+</div>
+</div>
+</body>
+</html>
